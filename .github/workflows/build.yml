@@ -18,6 +18,8 @@ jobs:
         run: sudo pip install virtualenv && make test
       - name: build binary
         run: make build_linux link_linux
+      - name: build armbinary
+        run: make build_linux_arm link_linux_arm
       - name: run acceptance tests
         run: make acceptance
       - name: upload coverage report

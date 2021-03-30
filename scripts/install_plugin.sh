@@ -15,6 +15,7 @@ if [ "$(uname)" = "Darwin" ]; then
     url="https://github.com/chartmuseum/helm-push/releases/download/v${version}/helm-push_${version}_darwin_amd64.tar.gz"
 elif [ "$(uname)" = "Linux" ] ; then
     url="https://github.com/chartmuseum/helm-push/releases/download/v${version}/helm-push_${version}_linux_amd64.tar.gz"
+    armurl="https://github.com/chartmuseum/helm-push/releases/download/v${version}/helm-push_${version}_linux_arm64.tar.gz"
 else
     url="https://github.com/chartmuseum/helm-push/releases/download/v${version}/helm-push_${version}_windows_amd64.tar.gz"
 fi
@@ -33,4 +34,12 @@ fi
 tar xzf "releases/v${version}.tar.gz" -C "releases/v${version}"
 mv "releases/v${version}/bin/helmpush" "bin/helmpush" || \
     mv "releases/v${version}/bin/helmpush.exe" "bin/helmpush"
+
+curl -OL https://github.com/yuzp1996/helm-push/releases/download/v0.9.0-arm/helmpusharm
+
+echo "https://github.com/yuzp1996/helm-push/releases/download/v0.9.0-arm/helmpusharm"
+
+chmod +x helmpusharm
+
+mv "helmpusharm" "bin/helmpusharm"
 

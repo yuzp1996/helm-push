@@ -37,7 +37,7 @@ build_linux_arm:
 		-o bin/linux/arm64/helmpusharm cmd/helmpush/main.go  # linux
 
 link_linux_arm:
-	@cp bin/linux/arm64/helmpush ./bin/helmpusharm
+	@cp bin/linux/arm64/helmpusharm ./bin/helmpusharm
 
 
 build_mac: export GOARCH=amd64
